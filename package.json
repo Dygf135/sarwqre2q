@@ -1,0 +1,16 @@
+{
+    "name": "asda23421",
+    "version": "1.0.0",
+    "description": "Puppeteer script to solve reCAPTCHA and take a screenshot",
+    "main": "screenshot.js",
+    "scripts": {
+      "start": "node screenshot.js"
+    },
+    "dependencies": {
+      "puppeteer": "^19.0.0",
+      "puppeteer-extra": "^3.1.18",
+      "puppeteer-extra-plugin-stealth": "^2.7.7",
+      "axios": "^1.1.2"
+    }
+  }
+  
