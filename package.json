@@ -4,7 +4,8 @@
     "description": "Puppeteer script to solve reCAPTCHA and take a screenshot",
     "main": "screenshot.js",
     "scripts": {
-      "start": "node screenshot.js"
+      "start": "node screenshot.js",
+      "postinstall": "puppeteer-install"
     },
     "dependencies": {
       "puppeteer": "^19.0.0",
