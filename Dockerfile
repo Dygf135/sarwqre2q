@@ -4,14 +4,17 @@ FROM apify/actor-node:20
 # Set the working directory in the container
 WORKDIR /usr/src/app
 
-# Copy the current directory contents into the container at /usr/src/app
-COPY . ./
+# Copy the package.json and package-lock.json to the working directory
+COPY package*.json ./
 
-# Install any needed packages specified in package.json
-RUN npm install --quiet --only=prod --no-optional
+# Install dependencies
+RUN npm install
 
 # Install Puppeteer and download Chromium
-RUN npm install puppeteer
+RUN npm install puppeteer --ignore-scripts && npx puppeteer install
+
+# Copy the rest of the application code to the working directory
+COPY . .
 
 # Make port 80 available to the world outside this container
 EXPOSE 80
