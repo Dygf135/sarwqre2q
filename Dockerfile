@@ -10,8 +10,8 @@ COPY package*.json ./
 # Install dependencies
 RUN npm install
 
-# Install Puppeteer and download Chromium
-RUN npm install puppeteer --ignore-scripts && npx puppeteer install
+# Ensure Puppeteer installs Chromium
+RUN npm install puppeteer@latest --ignore-scripts
 
 # Copy the rest of the application code to the working directory
 COPY . .
